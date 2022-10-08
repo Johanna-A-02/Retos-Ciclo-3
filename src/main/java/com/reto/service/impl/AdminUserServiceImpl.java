@@ -23,8 +23,8 @@ public class AdminUserServiceImpl implements AdminUserService {
     }
 
     @Override
-    public String postAdminUser(AdminUser adminUser) {
+    public AdminUser postAdminUser(AdminUser adminUser) {
         adminUserRepository.save(adminUser);
-        return "Guardado Éxitosamente!";
+        return adminUser;
     }
 }

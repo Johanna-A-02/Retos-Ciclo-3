@@ -9,5 +9,5 @@ public interface AdminUserService {
 
     List<AdminUser> getAdminUser();
 
-    String postAdminUser(AdminUser adminUser);
+    AdminUser postAdminUser(AdminUser adminUser);
 }
