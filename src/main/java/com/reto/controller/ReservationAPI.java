@@ -2,12 +2,10 @@ package com.reto.controller;
 
 import com.reto.model.Reservation;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/Reservation")
+@CrossOrigin(origins = {"*"})
 public interface ReservationAPI {
 
     @GetMapping(value = "/all", produces = "application/json")

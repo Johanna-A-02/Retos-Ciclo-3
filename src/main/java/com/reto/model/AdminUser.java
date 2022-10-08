@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class AdminUser {
 
     @Id
-    @Column()
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAdminUser;
     @Column

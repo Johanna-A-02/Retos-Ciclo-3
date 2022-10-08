@@ -3,6 +3,7 @@ package com.reto.controller.impl;
 import com.reto.controller.ReservationAPI;
 import com.reto.model.Reservation;
 import com.reto.service.ReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ReservationControllerImpl implements ReservationAPI {
 
+    @Autowired
     private ReservationService reservationService;
 
     @Override
