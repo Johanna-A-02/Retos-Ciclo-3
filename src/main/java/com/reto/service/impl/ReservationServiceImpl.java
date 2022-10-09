@@ -23,8 +23,8 @@ public class ReservationServiceImpl implements ReservationService{
     }
 
     @Override
-    public String postReservation(Reservation reservation){
+    public Reservation postReservation(Reservation reservation){
         reservationRepository.save(reservation);
-        return "Guardado Éxitosamente!";
+        return reservation;
     }
 }

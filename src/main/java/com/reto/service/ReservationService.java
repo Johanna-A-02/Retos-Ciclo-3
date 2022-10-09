@@ -8,6 +8,6 @@ public interface ReservationService {
 
     List<Reservation> getReservation();
 
-    String postReservation (Reservation reservation);
+    Reservation postReservation (Reservation reservation);
 
 }

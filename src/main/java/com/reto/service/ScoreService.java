@@ -9,5 +9,5 @@ public interface ScoreService {
 
     List<Score> getScore();
 
-    String postScore(Score score);
+    Score postScore(Score score);
 }

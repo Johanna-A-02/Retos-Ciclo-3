@@ -7,5 +7,5 @@ import java.util.List;
 public interface CabinService {
     List<Cabin> getCabin();
 
-    String postCabin(Cabin cabin);
+    Cabin postCabin(Cabin cabin);
 }

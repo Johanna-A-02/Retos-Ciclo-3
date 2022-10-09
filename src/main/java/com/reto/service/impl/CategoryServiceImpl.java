@@ -23,8 +23,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public String postCategory(Category category) {
+    public Category postCategory(Category category) {
         categoryRepository.save(category);
-        return "Guardado Éxitosamente!";
+        return category;
     }
 }

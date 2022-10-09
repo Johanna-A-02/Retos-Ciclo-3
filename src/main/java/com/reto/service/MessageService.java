@@ -8,5 +8,5 @@ public interface MessageService {
 
     List<Message> getMessage();
 
-    String postMessage(Message message);
+    Message postMessage(Message message);
 }

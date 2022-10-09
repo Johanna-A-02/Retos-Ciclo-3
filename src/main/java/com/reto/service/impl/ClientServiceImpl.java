@@ -23,9 +23,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public String postClient(Client client) {
+    public Client postClient(Client client) {
         clientRepository.save(client);
-        return "Guardado Éxitosamente!";
+        return client;
     }
 
 }

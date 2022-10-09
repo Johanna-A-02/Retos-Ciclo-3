@@ -13,7 +13,7 @@ public interface CategoryAPI {
     @GetMapping(value = "/all", produces = "application/json")
     ResponseEntity<?> getCategory();
 
-    @PostMapping (value = "/all", produces = "application/json")
+    @PostMapping (value = "/save", produces = "application/json")
     ResponseEntity<?> postCategory(@RequestBody Category category);
 
 }

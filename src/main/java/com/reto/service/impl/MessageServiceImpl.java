@@ -22,8 +22,8 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public String postMessage(Message message) {
+    public Message postMessage(Message message) {
         messageRepository.save(message);
-        return "Guardado Éxitosamente!";
+        return message;
     }
 }

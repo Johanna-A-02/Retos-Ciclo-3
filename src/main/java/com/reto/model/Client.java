@@ -29,9 +29,10 @@ public class Client {
     @Column
     private String email;
     @Column
-    private Integer age;
-    @Column
     private String password;
+    @Column
+    private Integer age;
+
 
     //RELATIONS
     //@OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST})

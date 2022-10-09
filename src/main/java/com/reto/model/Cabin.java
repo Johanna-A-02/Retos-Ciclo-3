@@ -19,17 +19,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "cabin")
 public class Cabin {
-
     @Id
     @Column()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
-    private String name;
-    @Column
     private String brand;
     @Column
     private Integer rooms;
+    @Column
+    private Integer categoryId;
+    @Column
+    private String name;
     @Column
     private String description;
 

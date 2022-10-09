@@ -23,8 +23,8 @@ public class ScoreServiceImpl implements ScoreService {
     }
 
     @Override
-    public String postScore(Score score) {
+    public Score postScore(Score score) {
         scoreRepository.save(score);
-        return "Guardado Éxitosamente!";
+        return score;
     }
 }

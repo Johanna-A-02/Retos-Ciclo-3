@@ -8,5 +8,5 @@ public interface ClientService {
 
     List<Client> getClient();
 
-    String postClient(Client client);
+    Client postClient(Client client);
 }

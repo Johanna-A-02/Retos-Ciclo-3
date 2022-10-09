@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "adminUser")
 public class AdminUser {
-
     @Id
     @Column()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,5 +25,4 @@ public class AdminUser {
     private String email;
     @Column
     private String password;
-
 }
