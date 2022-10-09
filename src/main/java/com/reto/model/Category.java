@@ -1,6 +1,7 @@
 package com.reto.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,13 +18,14 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@JsonPropertyOrder({ "id", "name", "description", "cabins" })
 @Table(name = "category")
 public class Category {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
     @Column
     private String name;
     @Column

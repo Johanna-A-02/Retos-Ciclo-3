@@ -1,6 +1,7 @@
 package com.reto.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@JsonPropertyOrder({ "idClient", "email", "password", "name", "age", "messages", "reservations"})
 @Table(name = "client")
 public class Client {
 
@@ -25,11 +27,11 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
     @Column
-    private String name;
-    @Column
     private String email;
     @Column
     private String password;
+    @Column
+    private String name;
     @Column
     private Integer age;
 
