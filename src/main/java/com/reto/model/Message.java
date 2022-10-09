@@ -25,12 +25,12 @@ public class Message {
 
     //RELATIONS
     @ManyToOne
-    @JoinColumn (name = "cabinId")
+    @JoinColumn(name = "cabinId", referencedColumnName ="id")
     @JsonIgnoreProperties(value = {"messages","reservations"})
     private Cabin cabin;
 
     @ManyToOne
-    @JoinColumn (name = "clientId")
+    @JoinColumn(name = "clientId", referencedColumnName = "idClient")
     @JsonIgnoreProperties(value = {"messages","reservations"})
     private Client client;
 

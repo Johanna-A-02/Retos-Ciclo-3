@@ -30,7 +30,7 @@ public class Score {
 
     //RELATIONS
     @OneToOne
-    @JoinColumn(name = "reservationId", referencedColumnName = "idReservation")
+    @JoinColumn(name = "reservation", referencedColumnName = "idReservation")
     @JsonIgnoreProperties(value = "score")
     private Reservation reservation;
 
