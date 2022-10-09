@@ -30,8 +30,6 @@ public class Cabin {
     @Column
     private Integer rooms;
     @Column
-    private Integer categoryId;
-    @Column
     private String name;
     @Column
     private String description;
