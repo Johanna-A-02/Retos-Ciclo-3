@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -28,9 +29,9 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
     @Column
-    private Date startDate;
+    private Timestamp startDate;
     @Column
-    private Date devolutionDate;
+    private Timestamp devolutionDate;
     @Column
     private String status;
 

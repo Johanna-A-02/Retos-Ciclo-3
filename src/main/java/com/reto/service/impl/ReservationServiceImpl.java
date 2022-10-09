@@ -24,6 +24,7 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Override
     public Reservation postReservation(Reservation reservation){
+        reservation.setStatus("created");
         reservationRepository.save(reservation);
         return reservation;
     }
