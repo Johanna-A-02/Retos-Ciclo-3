@@ -17,8 +17,8 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Override
     public List<Reservation> getReservation(){
-        List<Reservation> response = new ArrayList<>();
-        reservationRepository.findAll().forEach(response::add);
+        List<Reservation> response = reservationRepository.findAll();
+//        reservationRepository.findAll().forEach(response::add);
         return response;
     }
 

@@ -9,4 +9,8 @@ public interface ClientService {
     List<Client> getClient();
 
     Client postClient(Client client);
+
+    String putClient(Client client);
+
+    String deleteClient(Client client);
 }
