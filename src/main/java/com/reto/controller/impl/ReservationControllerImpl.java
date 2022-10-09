@@ -25,4 +25,22 @@ public class ReservationControllerImpl implements ReservationAPI {
         ResponseEntity<?> response = new ResponseEntity(reservationService.postReservation(reservation), HttpStatus.CREATED);
         return response;
     }
+
+    @Override
+    public ResponseEntity<?> putReservation(Reservation reservation) {
+        ResponseEntity<?> response = new ResponseEntity(reservationService.putReservation(reservation), HttpStatus.CREATED);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> getReservationById(Integer idReservation) {
+        ResponseEntity<?> response = new ResponseEntity(reservationService.getReservationById(idReservation), HttpStatus.OK);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> deleteReservation(Integer idReservation) {
+        ResponseEntity<?> response = new ResponseEntity(reservationService.deleteReservation(idReservation), HttpStatus.NO_CONTENT);
+        return response;
+    }
 }

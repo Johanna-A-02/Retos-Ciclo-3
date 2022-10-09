@@ -4,6 +4,8 @@ import com.reto.model.Client;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RequestMapping("/api/Client")
 @CrossOrigin(origins = {"*"})
 public interface ClientAPI {
@@ -15,4 +17,10 @@ public interface ClientAPI {
 
     @PutMapping(value = "/update", produces = "application/json")
     ResponseEntity<?> putClient(@RequestBody Client client);
+
+    @GetMapping(value = "/{idClient}", produces = "application/json")
+    ResponseEntity<?> getClientById(@PathVariable(value = "idClient") Integer idClient);
+
+    @DeleteMapping(value = "/{idClient}")
+    ResponseEntity<?> deleteClient(@PathVariable(value = "idClient")Integer idClient);
 }

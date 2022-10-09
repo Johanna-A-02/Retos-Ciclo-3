@@ -28,7 +28,20 @@ public class ClientControllerImpl implements ClientAPI {
 
     @Override
     public ResponseEntity<?> putClient(Client client) {
-        return null;
+        ResponseEntity<?> response = new ResponseEntity(clientService.putClient(client), HttpStatus.CREATED);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> getClientById(Integer idClient) {
+        ResponseEntity<?> response = new ResponseEntity(clientService.getClientById(idClient), HttpStatus.OK);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> deleteClient(Integer idClient) {
+        ResponseEntity<?> response = new ResponseEntity(clientService.deleteClient(idClient), HttpStatus.NO_CONTENT);
+        return response;
     }
 
 }
