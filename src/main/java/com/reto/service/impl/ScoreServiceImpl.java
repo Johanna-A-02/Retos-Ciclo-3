@@ -2,11 +2,13 @@ package com.reto.service.impl;
 
 import com.reto.model.Message;
 import com.reto.model.Score;
+import com.reto.repository.ReservationRepository;
 import com.reto.repository.ScoreRepository;
 import com.reto.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +18,9 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Autowired
     private ScoreRepository scoreRepository;
+
+    @Autowired
+    private ReservationRepository reservationRepository;
 
     @Override
     public List<Score> getScore(){
@@ -28,11 +33,21 @@ public class ScoreServiceImpl implements ScoreService {
     public Score postScore(Score score) {
 
         if(score.getIdScore() == null){
-            scoreRepository.save(score);
+            final Score scoreResponse = scoreRepository.save(score);
+            reservationRepository.findById(score.getReservation().getIdReservation()).map(reservation -> {
+                reservation.setScore(scoreResponse);
+                reservationRepository.save(reservation);
+                return true;
+            });
         }else{
             Optional<Score> scoreOptional = scoreRepository.findById(score.getIdScore());
             if(scoreOptional.isEmpty()){
-                score = scoreRepository.save(score);
+                final Score scoreResponse = scoreRepository.save(score);
+                reservationRepository.findById(score.getReservation().getIdReservation()).map(reservation -> {
+                    reservation.setScore(scoreResponse);
+                    reservationRepository.save(reservation);
+                    return true;
+                });
             }else{
                 score = scoreOptional.get();
             }
