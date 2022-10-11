@@ -1,6 +1,7 @@
 package com.reto.controller.impl;
 
 import com.reto.controller.MessageAPI;
+import com.reto.model.Client;
 import com.reto.model.Message;
 import com.reto.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,23 @@ public class MessageControllerImpl implements MessageAPI {
     public ResponseEntity<?> postMessage(Message message) {
 
         ResponseEntity<?> response = new ResponseEntity(messageService.postMessage(message), HttpStatus.CREATED);
+        return response;
+    }
+    @Override
+    public ResponseEntity<?> putMessage(Message message) {
+        ResponseEntity<?> response = new ResponseEntity(messageService.putMessage(message), HttpStatus.CREATED);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> getMessageById(Integer idMessage) {
+        ResponseEntity<?> response = new ResponseEntity(messageService.getMessageById(idMessage), HttpStatus.OK);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> deleteMessage(Integer idMessage) {
+        ResponseEntity<?> response = new ResponseEntity(messageService.deleteMessage(idMessage), HttpStatus.NO_CONTENT);
         return response;
     }
 }

@@ -38,4 +38,35 @@ public class MessageServiceImpl implements MessageService {
         }
         return message;
     }
+    @Override
+    public Message putMessage(Message message){
+        if(message.getIdMessage() != null){
+            Optional<Message> messageOptional = messageRepository.findById(message.getIdMessage());
+            if(messageOptional.isPresent()){
+                Message messageUpdate = messageOptional.get();
+                messageUpdate.setMessageText(message.getMessageText() != null ? message.getMessageText(): messageUpdate.getMessageText());
+
+                //messageUpdate.setMessages(message.getMessages() != null ? message.getMessages(): clientUpdate.getMessages());
+                //messageUpdate.setReservations(client.getReservations() != null ? client.getReservations(): clientUpdate.getReservations());
+
+                message = messageRepository.save(messageUpdate);
+            }
+        }
+        return message;
+    }
+
+    @Override
+    public Optional<Message> getMessageById(Integer idMessage){
+        return messageRepository.findById(idMessage);
+    }
+
+    @Override
+    public boolean deleteMessage(Integer idMessage){
+        Boolean flag = messageRepository.findById(idMessage).map(message -> {
+            messageRepository.delete(message);
+            return true;
+        }).orElse(false);
+
+        return flag;
+    }
 }

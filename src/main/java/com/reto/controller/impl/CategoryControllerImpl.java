@@ -2,6 +2,7 @@ package com.reto.controller.impl;
 
 import com.reto.controller.CategoryAPI;
 import com.reto.model.Category;
+import com.reto.model.Client;
 import com.reto.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,23 @@ public class CategoryControllerImpl implements CategoryAPI{
     @Override
     public ResponseEntity<?> postCategory(Category category) {
         ResponseEntity<?> response = new ResponseEntity(categoryService.postCategory(category), HttpStatus.CREATED);
+        return response;
+    }
+    @Override
+    public ResponseEntity<?> putCategory(Category category) {
+        ResponseEntity<?> response = new ResponseEntity(categoryService.putCategory(category), HttpStatus.CREATED);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> getCategoryById(Integer idCategory) {
+        ResponseEntity<?> response = new ResponseEntity(categoryService.getCategoryById(idCategory), HttpStatus.OK);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> deleteCategory(Integer idCategory) {
+        ResponseEntity<?> response = new ResponseEntity(categoryService.deleteCategory(idCategory), HttpStatus.NO_CONTENT);
         return response;
     }
 }

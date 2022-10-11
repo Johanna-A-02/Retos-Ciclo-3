@@ -39,4 +39,38 @@ public class CategoryServiceImpl implements CategoryService {
 
         return category;
     }
+    @Override
+    public Category putCategory(Category category){
+        if(category.getId() != null){
+            Optional<Category> categoryOptional = categoryRepository.findById(category.getId());
+            if(categoryOptional.isPresent()){
+                Category categoryUpdate = categoryOptional.get();
+                categoryUpdate.setName(category.getName() != null ? category.getName(): categoryUpdate.getName());
+                categoryUpdate.setDescription(category.getDescription() != null ? category.getDescription(): categoryUpdate.getDescription());
+
+                //categoryUpdate.setCategory(category.getCategory() != null ? category.getCategory(): categoryUpdate.getCategory());
+                //categoryUpdate.setMessages(category.getMessages() != null ? category.getMessages(): categoryUpdate.getMessages());
+                //categoryUpdate.setReservations(category.getReservations() != null ? category.getReservations(): categoryUpdate.getReservations());
+
+
+                category = categoryRepository.save(categoryUpdate);
+            }
+        }
+        return category;
+    }
+
+    @Override
+    public Optional<Category> getCategoryById(Integer idCategory){
+        return categoryRepository.findById(idCategory);
+    }
+
+    @Override
+    public boolean deleteCategory(Integer idCategory){
+        Boolean flag = categoryRepository.findById(idCategory).map(category -> {
+            categoryRepository.delete(category);
+            return true;
+        }).orElse(false);
+
+        return flag;
+    }
 }
