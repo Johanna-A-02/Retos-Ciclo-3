@@ -4,15 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -30,7 +22,7 @@ public class Score {
     private Integer stars;
 
     //RELATIONS
-    @OneToOne(cascade = CascadeType.REFRESH)
+    @OneToOne
     @JoinColumn(name = "reservation", referencedColumnName = "idReservation")
     @JsonIgnoreProperties(value = "score")
     private Reservation reservation;

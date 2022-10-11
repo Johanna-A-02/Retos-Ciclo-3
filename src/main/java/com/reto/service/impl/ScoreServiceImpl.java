@@ -2,6 +2,7 @@ package com.reto.service.impl;
 
 import com.reto.model.Client;
 import com.reto.model.Message;
+import com.reto.model.Reservation;
 import com.reto.model.Score;
 import com.reto.repository.ReservationRepository;
 import com.reto.repository.ScoreRepository;
@@ -91,7 +92,15 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Override
     public boolean deleteScore(Integer idScore){
-        Boolean flag = scoreRepository.findById(idScore).map(score -> {
+        Optional<Score> scoreOptional = scoreRepository.findById(idScore);
+        if(scoreOptional.isPresent()){
+            if (scoreOptional.get().getReservation() != null){
+                final Reservation reservation = scoreOptional.get().getReservation();
+                reservation.setScore(null);
+                reservationRepository.save(reservation);
+            }
+        }
+        Boolean flag = scoreOptional.map(score -> {
             scoreRepository.delete(score);
             return true;
         }).orElse(false);
