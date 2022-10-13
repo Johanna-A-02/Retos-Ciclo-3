@@ -1,8 +1,6 @@
 package com.reto.service.impl;
 
-import com.reto.model.Category;
 import com.reto.model.Client;
-import com.reto.model.Reservation;
 import com.reto.repository.ClientRepository;
 import com.reto.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;

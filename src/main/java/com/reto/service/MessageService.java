@@ -1,6 +1,5 @@
 package com.reto.service;
 
-import com.reto.model.Client;
 import com.reto.model.Message;
 
 import java.util.List;

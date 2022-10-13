@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,7 +42,7 @@ public class Client {
     @JsonIgnoreProperties(value = "client")
     private List<Message> messages;
 
-    @OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @JsonIgnoreProperties(value = "client")
     private List<Reservation> reservations;
 

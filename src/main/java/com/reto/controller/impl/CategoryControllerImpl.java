@@ -2,7 +2,6 @@ package com.reto.controller.impl;
 
 import com.reto.controller.CategoryAPI;
 import com.reto.model.Category;
-import com.reto.model.Client;
 import com.reto.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

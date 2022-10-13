@@ -1,7 +1,6 @@
 package com.reto.controller.impl;
 
 import com.reto.controller.ScoreAPI;
-import com.reto.model.Client;
 import com.reto.model.Score;
 import com.reto.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;

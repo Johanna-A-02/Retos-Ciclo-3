@@ -1,5 +1,6 @@
 package com.reto.service;
 
+import com.reto.model.ReportClient;
 import com.reto.model.Reservation;
 
 import java.util.List;
@@ -16,5 +17,7 @@ public interface ReservationService {
     Optional<Reservation> getReservationById(Integer idReservation);
 
     boolean deleteReservation(Integer idReservation);
+
+    List<ReportClient> getReportStatus();
 
 }

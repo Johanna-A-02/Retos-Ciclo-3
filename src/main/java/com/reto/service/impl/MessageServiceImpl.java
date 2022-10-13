@@ -1,6 +1,5 @@
 package com.reto.service.impl;
 
-import com.reto.model.Client;
 import com.reto.model.Message;
 import com.reto.repository.MessageRepository;
 import com.reto.service.MessageService;

@@ -2,7 +2,6 @@ package com.reto.controller.impl;
 
 import com.reto.controller.AdminUserAPI;
 import com.reto.model.AdminUser;
-import com.reto.model.Client;
 import com.reto.service.AdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

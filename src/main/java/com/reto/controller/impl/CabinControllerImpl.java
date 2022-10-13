@@ -2,7 +2,6 @@ package com.reto.controller.impl;
 
 import com.reto.controller.CabinAPI;
 import com.reto.model.Cabin;
-import com.reto.model.Client;
 import com.reto.service.CabinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
