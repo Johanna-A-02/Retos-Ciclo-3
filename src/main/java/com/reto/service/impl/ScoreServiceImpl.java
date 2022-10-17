@@ -34,8 +34,15 @@ public class ScoreServiceImpl implements ScoreService {
         if(score.getIdScore() == null){
             final Score scoreResponse = scoreRepository.save(score);
             reservationRepository.findById(score.getReservation().getIdReservation()).map(reservation -> {
-                reservation.setScore(scoreResponse);
-                reservationRepository.save(reservation);
+                if(reservation.getScore() == null){
+                    reservation.setScore(scoreResponse);
+                    reservationRepository.save(reservation);
+                }else{
+                    scoreResponse.setReservation(reservation);
+                    scoreResponse.setIdScore(reservation.getScore().getIdScore());
+                    scoreResponse.setStars(reservation.getScore().getStars());
+                    scoreResponse.setMessageText(reservation.getScore().getMessageText());
+                }
                 return true;
             });
         }else{
@@ -43,8 +50,15 @@ public class ScoreServiceImpl implements ScoreService {
             if(scoreOptional.isEmpty()){
                 final Score scoreResponse = scoreRepository.save(score);
                 reservationRepository.findById(score.getReservation().getIdReservation()).map(reservation -> {
-                    reservation.setScore(scoreResponse);
-                    reservationRepository.save(reservation);
+                    if(reservation.getScore() == null){
+                        reservation.setScore(scoreResponse);
+                        reservationRepository.save(reservation);
+                    }else{
+                        scoreResponse.setReservation(reservation);
+                        scoreResponse.setIdScore(reservation.getScore().getIdScore());
+                        scoreResponse.setStars(reservation.getScore().getStars());
+                        scoreResponse.setMessageText(reservation.getScore().getMessageText());
+                    }
                     return true;
                 });
             }else{
