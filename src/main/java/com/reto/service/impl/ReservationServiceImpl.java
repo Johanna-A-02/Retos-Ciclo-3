@@ -35,12 +35,12 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public Reservation postReservation(Reservation reservation) {
         if (reservation.getIdReservation() == null) {
-            reservation.setStatus("created");
+            reservation.setStatus(reservation.getStatus() != null ? reservation.getStatus() : "created");
             reservationRepository.save(reservation);
         } else {
             Optional<Reservation> reservationOptional = reservationRepository.findById(reservation.getIdReservation());
             if (reservationOptional.isEmpty()) {
-                reservation.setStatus("created");
+                reservation.setStatus(reservation.getStatus() != null ? reservation.getStatus() : "created");
                 reservation = reservationRepository.save(reservation);
             } else {
                 reservation = reservationOptional.get();
