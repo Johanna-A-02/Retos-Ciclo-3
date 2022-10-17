@@ -16,11 +16,11 @@ function adminUserGetAdminUser() {
 
             for (i = 0; i < respuesta.length; i++) {
                 tableBody += "<tr>";
-                tableBody += "<td>" + (respuesta[i].idAdminUser||"") + "</td>";
-                tableBody += "<td>" + (respuesta[i].name||"") + "</td>";
-                tableBody += "<td>" + (respuesta[i].email||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].idAdminUser||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].name||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].email||"") + "</td>";
                 /* tableBody += "<td>" + (respuesta[i].password||"") + "</td>"; */
-                tableBody += "<td> <button class='btn btn-danger mb-2' onclick='adminUserDeleteAdminUser(" + (respuesta[i].idAdminUser||"") + ")'><b>Eliminar Usuario Administrativo</b></button>"
+                tableBody += "<td style='text-align: center'> <button class='btn btn-danger mb-2' onclick='adminUserDeleteAdminUser(" + (respuesta[i].idAdminUser||"") + ")'><b>Eliminar Usuario Administrativo</b></button>"
                     + " <button class='btn btn-info mb-2' onclick='verDetalle(\"" + (respuesta[i].idAdminUser||"") + "\",\"" + (respuesta[i].name||"") + "\",\"" + (respuesta[i].email||"") + "\",\"" + (respuesta[i].password||"") + "\")'><b>Ver Detalle </b></button> </td>";
                 tableBody += "</tr>";
             }

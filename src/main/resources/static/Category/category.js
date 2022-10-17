@@ -28,7 +28,7 @@ function categoryGetCategory() {
                 tableBody += "<td>" + respuesta[i].name + "</td>";
                 tableBody += "<td>" + respuesta[i].description + "</td>";
                 tableBody += "<td>" + cabinsList + "</td>";
-                tableBody += "<td> <button class='btn btn-danger mb-2' onclick='categoryDeleteCategory(" + respuesta[i].id + ")'><b>Eliminar Categoría</b></button>"
+                tableBody += "<td style='text-align: center'> <button class='btn btn-danger mb-2' onclick='categoryDeleteCategory(" + respuesta[i].id + ")'><b>Eliminar Categoría</b></button>"
                     + " <button class='btn btn-info mb-2' onclick='verDetalle(\"" + respuesta[i].id + "\",\"" + respuesta[i].name + "\",\"" + respuesta[i].description + "\")'><b>Ver Detalle </b></button> </td>";
                 tableBody += "</tr>";
             }

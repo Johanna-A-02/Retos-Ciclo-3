@@ -16,12 +16,12 @@ function clientGetClientes() {
 
             for (i = 0; i < respuesta.length; i++) {
                 tableBody += "<tr>";
-                tableBody += "<td>" + respuesta[i].idClient + "</td>";
-                tableBody += "<td>" + respuesta[i].name + "</td>";
-                tableBody += "<td>" + respuesta[i].email + "</td>";
-                tableBody += "<td>" + respuesta[i].age + "</td>";
+                tableBody += "<td style='text-align: center'>" + respuesta[i].idClient + "</td>";
+                tableBody += "<td style='text-align: center'>" + respuesta[i].name + "</td>";
+                tableBody += "<td style='text-align: center'>" + respuesta[i].email + "</td>";
+                tableBody += "<td style='text-align: center'>" + respuesta[i].age + "</td>";
                 /* tableBody += "<td>" + respuesta[i].password + "</td>"; */
-                tableBody += "<td> <button class='btn btn-danger mb-2' onclick='clientDeleteClient(" + respuesta[i].idClient + ")'><b>Eliminar Cliente</b></button>"
+                tableBody += "<td style='text-align: center'> <button class='btn btn-danger mb-2' onclick='clientDeleteClient(" + respuesta[i].idClient + ")'><b>Eliminar Cliente</b></button>"
                     + " <button class='btn btn-info mb-2' onclick='verDetalle(\"" + respuesta[i].idClient + "\",\"" + respuesta[i].name + "\",\"" + respuesta[i].email + "\",\"" + respuesta[i].age + "\",\"" + respuesta[i].password + "\")'><b>Ver Detalle </b></button> </td>";
                 tableBody += "</tr>";
             }

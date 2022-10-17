@@ -16,21 +16,19 @@ function reservationGetReservation() {
 
             let tableBody = "";
 
-            for (i = 0; i < respuesta.length; i++) {
-                /* const starDateFomatted = validateDate((respuesta[i].startDate.slice(0,10) || ""));
-                const devolutionDateFomatted = validateDate((respuesta[i].devolutionDate.slice(0,10) || "")); */
+            for (i = 0; i < respuesta.length; i++) {                
                 tableBody += "<tr>";
-                tableBody += "<td>" + respuesta[i].idReservation + "</td>";
+                tableBody += "<td style='text-align: center'>" + respuesta[i].idReservation + "</td>";
                 /* tableBody += "<td>" + (respuesta[i].startDate.slice(0,10) || "") + "</td>"; */
                 /* tableBody += "<td>" + (respuesta[i].devolutionDate.slice(0,10) || "") + "</td>"; */
-                tableBody += "<td>" + ((respuesta[i].cabin||{}).name||"") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].client||{}).idClient||"") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].client||{}).name||"") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].client||{}).email||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].cabin||{}).name||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client||{}).idClient||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client||{}).name||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client||{}).email||"") + "</td>";
                 /* tableBody += "<td>" + respuesta[i].status + "</td>"; */
-                tableBody += "<td>" + ((respuesta[i].score||{}).stars||"") + "</td>";                
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].score||{}).stars||"") + "</td>";                
                 /* tableBody += "<td>" + respuesta[i].score.stars + " =>" + respuesta[i].score.messageText + "</td>"; */
-                tableBody += "<td> <button class='btn btn-danger mb-2' onclick='reservationDeleteReservation(" + respuesta[i].idReservation + ")'><b>Eliminar Reserva</b></button>"
+                tableBody += "<td style='text-align: center'> <button class='btn btn-danger mb-2' onclick='reservationDeleteReservation(" + respuesta[i].idReservation + ")'><b>Eliminar Reserva</b></button>"
                     + " <button class='btn btn-info mb-2' onclick='verDetalle(\"" + respuesta[i].idReservation + "\",\"" + (respuesta[i].startDate.slice(0,10) || "") + "\",\"" + (respuesta[i].devolutionDate.slice(0,10) || "") + "\",\"" + respuesta[i].status + "\",\"" + ((respuesta[i].cabin||{}).id||"-1")
                     + "\",\"" + ((respuesta[i].client||{}).idClient||"") + "\", \"" + ((respuesta[i].score||{}).stars||"") + "\",\"" + ((respuesta[i].score||{}).messageText||"") + "\")'><b>Ver Detalle </b></button> </td>";
                 tableBody += "</tr>";

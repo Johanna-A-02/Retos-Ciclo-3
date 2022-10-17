@@ -21,7 +21,6 @@ function reportDatesGetReportDates() {
     }
 
     let urlReportDates = "http://localhost:8080/api/Reservation/report-dates/" + startDate + "/" + devolutionDate;
-    urlReportDates = "http://localhost:8080/api/Reservation/all";
 
     $.ajax({
         url: urlReportDates,
@@ -63,11 +62,11 @@ function reportClientsGetReportClients() {
 
             for (i = 0; i < respuesta.length; i++) {
                 tableBody += "<tr>";
-                tableBody += "<td>" + ((respuesta[i].client || {}).idClient || "") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].client || {}).name || "") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].client || {}).email || "") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].client || {}).age || "") + "</td>";
-                tableBody += "<td>" + (respuesta[i].total || "")+ "</td>";                
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client || {}).idClient || "") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client || {}).name || "") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client || {}).email || "") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].client || {}).age || "") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].total || "")+ "</td>";                
                 tableBody += "</tr>";
             }
             $("#t-body-reports").append(tableBody);

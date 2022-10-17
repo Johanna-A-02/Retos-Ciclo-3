@@ -18,12 +18,12 @@ function cabinGetCabin() {
             for (i = 0; i < respuesta.length; i++) {
                 tableBody += "<tr>";
                 /* tableBody += "<td>" + (respuesta[i].id||"") + "</td>"; */
-                tableBody += "<td>" + (respuesta[i].name||"") + "</td>";
-                tableBody += "<td>" + (respuesta[i].brand||"") + "</td>";
-                tableBody += "<td>" + (respuesta[i].rooms||"") + "</td>";
-                tableBody += "<td>" + (respuesta[i].description||"") + "</td>";
-                tableBody += "<td>" + ((respuesta[i].category||{}).name||"") + "</td>";
-                tableBody += "<td> <button class='btn btn-danger mb-2' onclick='cabinDeleteCabin(" + (respuesta[i].id||"") + ")'><b>Eliminar Cabaña</b></button>"
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].name||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].brand||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].rooms||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + (respuesta[i].description||"") + "</td>";
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].category||{}).name||"") + "</td>";
+                tableBody += "<td style='text-align: center'> <button class='btn btn-danger mb-2' onclick='cabinDeleteCabin(" + (respuesta[i].id||"") + ")'><b>Eliminar Cabaña</b></button>"
                     + " <button class='btn btn-info  mb-2' onclick='verDetalle(\"" 
                     + (respuesta[i].id||"") + "\",\"" + (respuesta[i].name||"") + "\",\"" + (respuesta[i].brand||"") + "\",\"" + (respuesta[i].rooms||"") + "\",\"" + (respuesta[i].description||"") + "\",\"" + ((respuesta[i].category||{}).id||"") 
                     + "\")'><b>Ver Detalle </b></button> </td>";

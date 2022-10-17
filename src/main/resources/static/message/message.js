@@ -19,10 +19,10 @@ function messageGetMessage() {
             for (i = 0; i < respuesta.length; i++) {
                 tableBody += "<tr>";
                 /* tableBody += "<td>" + respuesta[i].idMessage + "</td>"; */
-                tableBody += "<td>" + respuesta[i].messageText + "</td>";
+                tableBody += "<td style='text-align: center'>" + respuesta[i].messageText + "</td>";
                 /* tableBody += "<td>" + ((respuesta[i].client||{}).name||"") + "</td>"; */
-                tableBody += "<td>" + ((respuesta[i].cabin||{}).name||"") + "</td>";
-                tableBody += "<td> <button class='btn btn-danger mb-2' onclick='messageDeleteMessage(" + respuesta[i].idMessage + ")'><b>Eliminar Mensaje</b></button>"
+                tableBody += "<td style='text-align: center'>" + ((respuesta[i].cabin||{}).name||"") + "</td>";
+                tableBody += "<td style='text-align: center'> <button class='btn btn-danger mb-2' onclick='messageDeleteMessage(" + respuesta[i].idMessage + ")'><b>Eliminar Mensaje</b></button>"
                     + " <button class='btn btn-info mb-2' onclick='verDetalle(\"" + respuesta[i].idMessage + "\",\"" + respuesta[i].messageText + "\",\"" + ((respuesta[i].client||{}).idClient||"") + "\",\"" + ((respuesta[i].cabin||{}).id||"") + "\")'><b>Ver Detalle </b></button> </td>";
                 tableBody += "</tr>";
             }
