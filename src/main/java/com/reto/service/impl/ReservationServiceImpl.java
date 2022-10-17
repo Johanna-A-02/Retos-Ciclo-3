@@ -101,7 +101,8 @@ public class ReservationServiceImpl implements ReservationService {
 
         response.forEach(client -> {
             final ReportClient reportClient = new ReportClient();
-            reportClient.setTotal(client.getReservations() != null ? (int) client.getReservations().stream().filter(r -> r.getStatus().equals("completed")).count() : 0);
+//            reportClient.setTotal(client.getReservations() != null ? (int) client.getReservations().stream().filter(r -> r.getStatus().equals("completed")).count() : 0);
+            reportClient.setTotal(client.getReservations() != null ? client.getReservations().size() : 0);
             reportClient.setClient(client);
             responseList.add(reportClient);
         });
