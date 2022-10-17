@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 @RestController
 public class ReservationControllerImpl implements ReservationAPI {
 
@@ -45,8 +48,22 @@ public class ReservationControllerImpl implements ReservationAPI {
     }
 
     @Override
+    public ResponseEntity<?> getReportDates(String startDate, String endDate) {
+        Timestamp startDateTimestamp = new Timestamp(Date.valueOf(startDate).getTime());
+        Timestamp endDateTimestamp = new Timestamp(Date.valueOf(endDate).getTime());
+        ResponseEntity<?> response = new ResponseEntity(reservationService.getReportDate(startDateTimestamp, endDateTimestamp), HttpStatus.OK);
+        return response;
+    }
+
+    @Override
     public ResponseEntity<?> getReportStatus() {
         ResponseEntity<?> response = new ResponseEntity(reservationService.getReportStatus(), HttpStatus.OK);
+        return response;
+    }
+
+    @Override
+    public ResponseEntity<?> getReportClient() {
+        ResponseEntity<?> response = new ResponseEntity(reservationService.getReportClient(), HttpStatus.OK);
         return response;
     }
 }

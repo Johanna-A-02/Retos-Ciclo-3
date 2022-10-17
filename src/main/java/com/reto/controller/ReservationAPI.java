@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.sql.Timestamp;
+
 @RequestMapping("/api/Reservation")
 @CrossOrigin(origins = {"*"})
 public interface ReservationAPI {
@@ -31,7 +33,13 @@ public interface ReservationAPI {
     ResponseEntity<?> deleteReservation(@PathVariable(value = "idReservation") Integer idReservation);
 
 
-    @GetMapping(value = "/report-clients", produces = "application/json")
+    @GetMapping(value = "/report-dates/{startDate}/{endDate}", produces = "application/json")
+    ResponseEntity<?> getReportDates(@PathVariable(value = "startDate")String startDate, @PathVariable(value = "endDate")String endDate);
+
+    @GetMapping(value = "/report-status", produces = "application/json")
     ResponseEntity<?> getReportStatus();
+
+    @GetMapping(value = "/report-clients", produces = "application/json")
+    ResponseEntity<?> getReportClient();
 
 }

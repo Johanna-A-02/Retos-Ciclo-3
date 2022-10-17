@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Alquiler de Cabañas Colombia</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- AJAX import-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+</head>
+
+<body>
+<!--    <div class ="container authenticated" style="display:none">-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark authenticated" style="display:none">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Index.html">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Client/client-template.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cabin/cabin-template.html">Cabañas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Category/category-template.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Reservation/reservation-template.html">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Score/score-template.html">Calificación De Las Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminUser/adminUser-template.html">Usuarios Administrativos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Message/message-template.html">Mensajes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Reports/reports-template.html">Reportes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<!--    </div>-->
+<!--    <div class ="container unauthenticated">-->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark unauthenticated">
+            <div class="collapse navbar-collapse" id="navbarNavUn">
+                <ul class="navbar-nav">
+                    <li class="nav-item" >
+                        <a class="nav-link" href="/oauth2/authorization/github">Menú temporalmente bloqueado, autentiquese aqui para acceder a mas opciones</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<!--    </div>-->
+    <script type="text/javascript">
+        $.get("/user", function (data){
+            $(".unauthenticated").hide();
+            $(".authenticated").show();
+        });
+    </script>
+    <div>
+        <div>            
+            <center>
+                <h1>¡Bienvenidos a mi Aplicacion, Alquiler de Cabañas!</h1>
+                <br>
+                <img src="../images/Cabana1.jpg" alt="Cabañas" style="width: 400px;height:300px;">                                               
+                <img src="../images/Cabana2.jpg" alt="Cabañas" style="width: 400px;height:300px;">                
+                <img src="../images/Cabana3.jpg" alt="Cabañas" style="width: 400px;height:300px;">     
+                <img src="../images/Cabana4.jpg" alt="Cabañas" style="width: 400px;height:300px;">
+                <img src="../images/Cabana5.jpg" alt="Cabañas" style="width: 400px;height:300px;">
+                </br> 
+                <br>              
+            </center>
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        <center>
+        <p1>Links imágenes (Derechos de Autor):
+        •https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_627,q_auto,w_1200/itemimages/56/93/5693420_v1.jpeg 
+        •https://lasillarotarm.blob.core.windows.net.optimalcdn.com/images/2020/02/21/conocelasparadisiacascabanassobreelmardelcaribemexicano-focus-0-0-640-384.jpg
+        •https://casasrusticas.org/wp-content/uploads/2021/08/cabanas-magicas-de-madera-08.jpeg
+        •https://i.pinimg.com/550x/dc/88/c8/dc88c81d3a787c5fde05cf48bfc34d61.jpg
+        •https://ingenieriacivilyarquitectura.com/cabanas-magicas-de-madera/cabanas-magicas-de-madera-2/</p1>
+        </center>
+    </div>
+
+</body>
+
+</html>

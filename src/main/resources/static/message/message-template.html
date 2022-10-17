@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='message.css'>
+    <script src='message.js'></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- AJAX import-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../Index.html">Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Client/client-template.html">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Cabin/cabin-template.html">Cabañas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Category/category-template.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Reservation/reservation-template.html">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Score/score-template.html">Calificación De Las Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../AdminUser/adminUser-template.html">Usuarios Administrativos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="message-template.html">Mensajes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Reports/reports-template.html">Reportes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="formato-div-formulario">
+        <div class="TextMessage">
+            <div>
+                <p>
+                    <center>
+                        <h3><strong>Mensajes</strong></h3>
+                    </center>
+                </p>
+            </div>
+            <div>
+                <div class="formato-div-formulario ">
+                    <div class="form-group">
+                        <b><label for="idMessage">ID:</label></b>
+                        <input type="number" class="form-control" id="idMessage" placeholder="Númerico">
+                    </div>
+                    <div class="form-group">
+                        <b><label for="messageText">Mensaje:</label></b>
+                        <input type="text" class="form-control" id="messageText" placeholder="Texto" maxlength="250">
+                    </div>
+                    
+                    <!-- <div class="form-group">
+                        <b><label for="rooms">Cliente:</label></b>
+                        <select class="form-select" aria-label="Default select example" id="select-client-idClient">
+                            <option value="-1" selected placeholder="Seleccione un Cliente">Seleccione un Cliente</option>
+                        </select>
+                    </div> -->
+                    
+                    <div class="form-group">
+                        <b><label for="rooms">Cabaña:</label></b>
+                        <select class="form-select" aria-label="Default select example" id="select-cabin-id">
+                            <option value="-1" selected placeholder="Seleccione una Cabaña">Seleccione una Cabaña</option>
+                        </select>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="form-row align-items-center">
+                    <center>
+                    <button type="submit" class="btn btn-primary mb-2" onclick="messagePostMessage()"><b>Crear Mensaje</b></button>
+                    <button type="submit" class="btn btn-success mb-2" onclick="messagePutMessage()"><b>Actualizar Mensaje</b></button>
+                    <button type="submit" class="btn btn-secondary mb-2" onclick="limpiarCampos()"><b>Limpiar Campos</b></button>
+                    </center>
+                </div>
+
+                <br>
+                <br>
+                <div class="formato-div-formulario">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col">ID</th> -->
+                                <th scope="col">Mensaje</th>
+                                <!-- <th scope="col">Nombre Cliente</th> -->
+                                <th scope="col">Nombre Cabaña</th>
+                                <th scope="col">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="t-body-message"> </tbody>
+                    </table>
+                </div>
+                <br>
+                <br>
+            </div>
+
+</body>
+
+</html>

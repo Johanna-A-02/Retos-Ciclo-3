@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cliente</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='client.css'>
+    <script src='client.js'></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- AJAX import-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../Index.html">Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="client-template.html">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Cabin/cabin-template.html">Cabañas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Category/category-template.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Reservation/reservation-template.html">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Score/score-template.html">Calificación De Las Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../AdminUser/adminUser-template.html">Usuarios Administrativos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Message/message-template.html">Mensajes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Reports/reports-template.html">Reportes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="formato-div-formulario">
+        <div class="TableClient">
+            <div>
+                <p>
+                    <center>
+                        <h3><strong>Tabla Clientes</strong></h3>
+                    </center>
+                </p>
+            </div>
+
+            <div class="formato-div-formulario ">
+                <div class="form-group">
+                    <b><label for="id">ID:</label></b>
+                    <input type="number" class="form-control" id="id" placeholder="Númerico">
+                </div>
+                <div class="form-group">
+                    <b><label for="name">Nombre:</label></b>
+                    <input type="text" class="form-control" id="name" placeholder="Texto" maxlength="250">
+                </div>
+                <div class="form-group">
+                    <b><label for="brand">Email:</label></b>
+                    <input type="email" class="form-control" id="email" placeholder="Texto" maxlength="45">
+                </div>
+                <div class="form-group">
+                    <b><label for="age">Edad:</label></b>
+                    <input type="number" class="form-control" id="age" placeholder="Númerico">
+                </div>
+                <div class="form-group">
+                    <b><label for="password">Contraseña:</label></b>
+                    <input type="password" class="form-control" id="password" placeholder="Texto" maxlength="45">
+                </div>
+            </div>
+            <br>
+            <div class="form-row align-items-center">
+                <center>
+                <button type="submit" class="btn btn-primary mb-2" onclick="clientPostClient()"><b>Crear Cliente</b></button>
+                <button type="submit" class="btn btn-success mb-2" onclick="clientPutClient()"><b>Actualizar Cliente</b></button>
+                <button type="submit" class="btn btn-secondary mb-2" onclick="limpiarCampos()"><b>Limpiar Campos</b></button>
+                </center>
+            </div>
+
+            <br>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edad</th>
+                        <!-- <th scope="col">Contraseña</th>-->
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="t-body-client"> </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+
+</body>
+
+</html>
